@@ -1,0 +1,189 @@
+/* Component-local tokens — set from @api colour properties via renderedCallback.
+   Fallback values keep the Salix palette when no override is provided. */
+
+/* Zone 1: Main footer */
+.branded-footer {
+    background-color: var(--branded-footer-bg, #000000);
+    width: 100%;
+}
+
+/* Shared inner container — constrains content width and centres it */
+.branded-footer__container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 30px;
+    box-sizing: border-box;
+}
+
+/* Navigation sections row */
+.branded-footer__navigation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 0;
+}
+
+.branded-footer__section-wrapper {
+    flex: 1 1 200px;
+}
+
+.branded-footer__section-wrapper--two-col {
+    flex: 2 1 400px;
+}
+
+.branded-footer__section {
+    padding: 0;
+}
+
+.branded-footer__heading {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--branded-footer-heading, #ffffff);
+    margin: 0 0 12px 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 8px;
+}
+
+/* Navigation link lists */
+.branded-footer__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.branded-footer__list--columns-2 {
+    columns: 2;
+    column-gap: 24px;
+    display: block;
+}
+
+.branded-footer__list-item {
+    break-inside: avoid;
+}
+
+:host .branded-footer__link {
+    font-size: 13px;
+    color: var(--branded-footer-nav-link, #ffffff);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    display: inline-block;
+    min-height: 44px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.branded-footer__link:hover {
+    text-decoration-thickness: 2px;
+}
+
+.branded-footer__link:focus-visible {
+    outline: 3px solid var(--branded-footer-focus, #ffdd00);
+    outline-offset: 2px;
+    background-color: var(--branded-footer-focus, #ffdd00);
+    color: #0b0c0c;
+    text-decoration: none;
+}
+
+:host .branded-footer__meta-link {
+    font-size: 13px;
+    color: var(--branded-footer-meta-link, #ffffff);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    display: inline-block;
+    min-height: 44px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.branded-footer__meta-link:hover {
+    text-decoration-thickness: 2px;
+}
+
+.branded-footer__meta-link:focus-visible {
+    outline: 3px solid var(--branded-footer-focus, #ffdd00);
+    outline-offset: 2px;
+    background-color: var(--branded-footer-focus, #ffdd00);
+    color: #0b0c0c;
+    text-decoration: none;
+}
+
+/* Section break above meta links */
+.branded-footer__section-break {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 24px 0 16px;
+}
+
+/* Meta links row */
+.branded-footer__meta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.branded-footer__inline-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.branded-footer__inline-list-item {
+    display: inline;
+}
+
+/* Zone 2: Licence bar */
+.branded-footer__licence-bar {
+    background-color: var(--branded-footer-bar-bg, #000000);
+    width: 100%;
+}
+
+.branded-footer__licence-bar .branded-footer__container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.branded-footer__licence-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.branded-footer__licence-logo {
+    flex-shrink: 0;
+    color: var(--branded-footer-link, #ffffff);
+}
+
+.branded-footer__licence-text {
+    font-size: 12px;
+    color: var(--branded-footer-link, #ffffff);
+    margin: 0;
+}
+
+:host .branded-footer__licence-link {
+    color: var(--branded-footer-link, #ffffff);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.branded-footer__licence-link:hover {
+    text-decoration-thickness: 2px;
+}
+
+.branded-footer__licence-link:focus-visible {
+    outline: 3px solid var(--branded-footer-focus, #ffdd00);
+    outline-offset: 2px;
+    background-color: var(--branded-footer-focus, #ffdd00);
+    color: #0b0c0c;
+    text-decoration: none;
+}

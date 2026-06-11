@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+
+            <!-- Secondary navigation -->
+            <property name="sectionNames"
+                      type="String"
+                      label="Section Names"
+                      description="Semicolon-separated list of section heading names, one per column. Example: Our Offices;Contact Us" />
+            <property name="navigationNames"
+                      type="String"
+                      label="Navigation Items"
+                      description="Pipe-separated item labels within each section; semicolons separate sections. Must match the order of Section Names. Example: London Office|Manchester Office;Email Us|Call Us" />
+            <property name="navigationLinks"
+                      type="String"
+                      label="Navigation URLs"
+                      description="Pipe-separated URLs in the same order as Navigation Items; semicolons separate sections. Use full URLs for external links (https://...) or site-relative paths (/page) for internal pages. Example: https://maps.google.com/...|https://maps.google.com/...;mailto:info@example.com|tel:+44" />
+            <property name="columnTypes"
+                      type="String"
+                      label="Column Type"
+                      description="Semicolon-separated values, one per section. Enter 1 for a single-column list or 2 for a two-column list. Must match the order of Section Names. Example: 2;1" />
+
+            <!-- Fixed meta link page names (resolved via NavigationMixin — no domain needed) -->
+            <property name="privacyPageName"
+                      type="String"
+                      label="Privacy Page API Name"
+                      default="Privacy"
+                      description="API name of the Privacy page as set in Experience Builder (Page Properties > API Name). Do not include the domain or site path — the component resolves the URL automatically." />
+            <property name="cookiesPageName"
+                      type="String"
+                      label="Cookies Page API Name"
+                      default="Cookies"
+                      description="API name of the Cookies page as set in Experience Builder (Page Properties > API Name). Do not include the domain or site path — the component resolves the URL automatically." />
+            <property name="accessibilityPageName"
+                      type="String"
+                      label="Accessibility Statement Page API Name"
+                      default="Accessibility_Statement"
+                      description="API name of the Accessibility Statement page as set in Experience Builder (Page Properties > API Name). Do not include the domain or site path — the component resolves the URL automatically." />
+
+            <!-- Licence bar -->
+            <property name="hideLicenceBar"
+                      type="Boolean"
+                      label="Hide Licence Bar"
+                      description="Tick to hide the Open Government Licence bar. Leave unticked for public sector projects." />
+            <property name="licenceBarPrefix"
+                      type="String"
+                      label="Licence Bar Prefix Text"
+                      default="All content is available under the "
+                      description="Text appearing before the OGL link in the licence bar." />
+            <property name="licenceBarSuffix"
+                      type="String"
+                      label="Licence Bar Suffix Text"
+                      default=", except where otherwise stated"
+                      description="Text appearing after the OGL link in the licence bar." />
+
+            <!-- Colour overrides -->
+            <property name="headingColour"
+                      type="String"
+                      label="Section Heading Colour"
+                      description="Colour of the section name headings as a hex value (e.g. #ffffff). Must meet WCAG AAA contrast against the background colour." />
+            <property name="navLinkColour"
+                      type="String"
+                      label="Navigation Link Colour"
+                      description="Colour of the navigation item links within each section as a hex value (e.g. #CECBF6). Must meet WCAG AAA contrast against the background colour." />
+            <property name="metaLinkColour"
+                      type="String"
+                      label="Meta Link Colour"
+                      description="Colour of the Privacy, Cookies and Accessibility Statement links as a hex value (e.g. #CECBF6). Must meet WCAG AAA contrast against the background colour." />
+            <property name="backgroundColour"
+                      type="String"
+                      label="Background Colour"
+                      description="Main footer background colour as a hex value (e.g. #382573). Leave blank to inherit from the theme CSS custom property --branded-footer-bg." />
+            <property name="barBackgroundColour"
+                      type="String"
+                      label="Licence Bar Background Colour"
+                      description="Licence bar background colour as a hex value (e.g. #1a0f40). Leave blank to inherit from the theme CSS custom property --branded-footer-bar-bg." />
+
+<property name="focusColour"
+                      type="String"
+                      label="Focus Ring Colour"
+                      description="Focus indicator colour as a hex value (e.g. #ffdd00). Leave blank to inherit from the theme CSS custom property --branded-footer-focus." />
+
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,15 @@
+<template>
+    <!-- Skip link: must be the first focusable element on the page -->
+    <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+
+    <!-- Brand bar -->
+    <header class="branded-header__brand" role="banner">
+        <div class="branded-header__brand-container">
+            <a href={homeUrl} class="branded-header__logo-link">
+                <template if:true={logoUrl}>
+                    <img src={logoUrl} alt={logoAltText} class="branded-header__logo" />
+                </template>
+            </a>
+        </div>
+    </header>
+</template>

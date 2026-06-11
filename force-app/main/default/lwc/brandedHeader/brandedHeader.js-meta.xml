@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="logoReference"
+                      type="ContentReference"
+                      label="Logo Image"
+                      description="Select the header logo from your CMS workspace using the image picker. Upload the image via Setup > Digital Experiences > CMS Workspaces first, then select it here." />
+            <property name="homeUrl"
+                      type="String"
+                      label="Home URL"
+                      default="/"
+                      description="URL for the logo link. Defaults to the site root." />
+            <property name="logoHeight"
+                      type="String"
+                      label="Logo Height"
+                      description="Height of the logo in pixels. The header adjusts automatically to fit. Enter a number only (e.g. 48). Leave blank for the default of 48px." />
+            <property name="logoAltText"
+                      type="String"
+                      label="Logo Alt Text"
+                      default="Home"
+                      description="Accessible description of the logo image, read aloud by screen readers. Describe what the logo is and where it leads, e.g. 'Portal - go to home page'." />
+            <property name="backgroundColour"
+                      type="String"
+                      label="Background Colour"
+                      description="Header bar background colour as a hex value (e.g. #000000). Leave blank to inherit from the theme CSS custom property --branded-header-bg." />
+            <property name="focusColour"
+                      type="String"
+                      label="Focus Ring Colour"
+                      description="Focus indicator colour as a hex value (e.g. #ffdd00). Leave blank to inherit from the theme CSS custom property --branded-header-focus." />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

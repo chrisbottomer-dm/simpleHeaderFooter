@@ -1,0 +1,63 @@
+/* Component-local tokens — set from @api properties via renderedCallback.
+   Fallback values are the Default palette; override at :root in the theme for
+   a project that uses the CSS custom property approach instead of @api colours. */
+
+/* Skip link — visually hidden until focused */
+.govuk-skip-link {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    display: block;
+    padding: 12px 15px;
+    min-height: 44px;
+    box-sizing: border-box;
+    background-color: var(--branded-header-bg, #000000);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    z-index: 9999;
+}
+
+.govuk-skip-link:focus {
+    position: static;
+    top: auto;
+    left: auto;
+    outline: 3px solid var(--branded-header-focus, #ffdd00);
+    outline-offset: 0;
+    background-color: var(--branded-header-focus, #ffdd00);
+    color: #0b0c0c;
+}
+
+/* Brand bar */
+.branded-header__brand {
+    background-color: var(--branded-header-bg, #000000);
+    width: 100%;
+}
+
+.branded-header__brand-container {
+    display: flex;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 12px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.branded-header__logo-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    outline: none;
+}
+
+.branded-header__logo-link:focus-visible {
+    outline: 3px solid var(--branded-header-focus, #ffdd00);
+    outline-offset: 2px;
+}
+
+.branded-header__logo {
+    height: var(--branded-logo-height, 48px);
+    width: auto;
+    display: block;
+}
