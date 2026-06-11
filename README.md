@@ -17,9 +17,16 @@ A simple brand bar with a logo linked to the site home page. Includes a GOV.UK-s
 | `logoReference` | ContentReference | — | CMS image selected via the image picker. Upload via Setup > Digital Experiences > CMS Workspaces first. |
 | `homeUrl` | String | `/` | URL the logo links to. |
 | `logoHeight` | String | `48` | Logo height in pixels. Enter a number only (e.g. `48`). |
-| `logoAltText` | String | `Home` | Alt text for the logo, read by screen readers. Describe the logo and its destination (e.g. `Portal - go to home page`). |
+| `logoAltText` | String | `Home` | Accessible label for the logo link, read by screen readers. Describe the logo and its destination (e.g. `Portal - go to home page`). Applied as `aria-label` on the link; the image itself is treated as decorative. |
+| `showLogout` | Boolean | `false` | Show the sign out link in the header. |
+| `logoutLabel` | String | `Sign out` | Display text for the sign out link. |
+| `logoutColour` | String | — | Sign out link colour as a hex value (e.g. `#ffffff`). Falls back to CSS custom property `--branded-header-logout`. |
 | `backgroundColour` | String | — | Header background as a hex value (e.g. `#000000`). Falls back to CSS custom property `--branded-header-bg`. |
 | `focusColour` | String | — | Focus ring colour as a hex value (e.g. `#ffdd00`). Falls back to `--branded-header-focus`. |
+
+**Sign out link**
+
+When `showLogout` is enabled, a sign out link is rendered right-aligned in the header bar. The logout URL is constructed automatically from the site's base path (`BasePath + /secur/logout.jsp`) — no configuration of the URL is required.
 
 ---
 
@@ -94,4 +101,6 @@ These components are designed to support **WCAG 2.2 AAA** conformance at default
 - **Target size (2.5.5 AAA, 44×44px)** — footer nav links, footer meta links, and the header skip link all have `min-height: 44px` with sufficient padding to meet the enhanced target size criterion.
 - **Contrast (1.4.6 AAA, 7:1)** — default white-on-black text achieves 21:1. **Colour overrides are not validated by the component** — verify any custom hex values meet 7:1 contrast against their background before deploying.
 - **Link purpose (2.4.9 AAA)** — all links have meaningful standalone labels (skip link text, logo alt text, named nav items, fixed meta link labels, OGL link text).
-- **Semantic landmarks** — `role="banner"` on the header, `role="contentinfo"` on the footer, `aria-label="Navigation menu"` on nav lists, `aria-hidden="true"` and `focusable="false"` on the decorative licence SVG.
+- **Logo link accessible name** — `logoAltText` is applied as `aria-label` on the `<a>` element wrapping the logo; the `<img>` carries `alt=""` so screen readers don't announce it twice.
+- **Sign out link target size** — the sign out link has `min-height: 44px` and `min-width: 44px`, meeting WCAG 2.5.5 AAA.
+- **Semantic landmarks** — `role="contentinfo"` on the footer, `aria-label="Navigation menu"` on nav lists, `aria-hidden="true"` and `focusable="false"` on the decorative licence SVG.
