@@ -13,7 +13,7 @@
     box-sizing: border-box;
     background-color: var(--branded-header-bg, #000000);
     color: #ffffff;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
     z-index: 9999;
@@ -27,6 +27,7 @@
     outline-offset: 0;
     background-color: var(--branded-header-focus, #ffdd00);
     color: #0b0c0c;
+    text-decoration: underline;
 }
 
 /* Brand bar */
@@ -60,4 +61,35 @@
     height: var(--branded-logo-height, 48px);
     width: auto;
     display: block;
+}
+
+/* Sign out link — right-aligned via margin-left: auto on the flex container */
+:host .branded-header__logout {
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--branded-header-logout, #ffffff);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0 10px 24px;
+    min-height: 44px;
+    min-width: 44px;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+:host .branded-header__logout:hover {
+    text-decoration-thickness: 2px;
+}
+
+:host .branded-header__logout:focus-visible {
+    outline: 3px solid var(--branded-header-focus, #ffdd00);
+    outline-offset: 0;
+    background-color: var(--branded-header-focus, #ffdd00);
+    color: #0b0c0c;
+    text-decoration: none;
+    padding-left: 4px;
+    padding-right: 4px;
 }

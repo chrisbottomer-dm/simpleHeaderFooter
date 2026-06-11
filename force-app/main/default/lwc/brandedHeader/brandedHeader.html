@@ -5,11 +5,16 @@
     <!-- Brand bar -->
     <header class="branded-header__brand" role="banner">
         <div class="branded-header__brand-container">
-            <a href={homeUrl} class="branded-header__logo-link">
+            <a href={homeUrl} class="branded-header__logo-link" aria-label={logoAltText}>
                 <template if:true={logoUrl}>
-                    <img src={logoUrl} alt={logoAltText} class="branded-header__logo" />
+                    <img src={logoUrl} alt="" class="branded-header__logo" />
                 </template>
             </a>
+            <template if:true={showLogout}>
+                <a href={logoutHref} class="branded-header__logout">
+                    {logoutLabel}
+                </a>
+            </template>
         </div>
     </header>
 </template>

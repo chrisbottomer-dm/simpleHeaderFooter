@@ -1,4 +1,5 @@
 import { LightningElement, api } from 'lwc';
+import BasePath from '@salesforce/community/basePath';
 
 export default class BrandedHeader extends LightningElement {
     @api logoReference;
@@ -7,6 +8,19 @@ export default class BrandedHeader extends LightningElement {
     @api logoHeight;
     @api backgroundColour;
     @api focusColour;
+    @api showLogout = false;
+    @api logoutLabel = 'Sign out';
+    @api logoutColour;
+
+    _logoutHref;
+
+    connectedCallback() {
+        this._logoutHref = `${window.location.origin}${BasePath}/secur/logout.jsp`;
+    }
+
+    get logoutHref() {
+        return this._logoutHref || '#';
+    }
 
     get logoUrl() {
         const key = this.logoReference;
@@ -24,6 +38,7 @@ export default class BrandedHeader extends LightningElement {
         const host = this.template.host;
         if (this.backgroundColour) host.style.setProperty('--branded-header-bg', this.backgroundColour);
         if (this.focusColour) host.style.setProperty('--branded-header-focus', this.focusColour);
+        if (this.logoutColour) host.style.setProperty('--branded-header-logout', this.logoutColour);
         if (this.logoHeight) {
             const px = String(this.logoHeight).includes('px') ? this.logoHeight : `${this.logoHeight}px`;
             host.style.setProperty('--branded-logo-height', px);
